@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us</title>
+</head>
+<body>
+    <header>
+        <h1>Veridian Dynamics</h1>
+    </header>
+    <main>
+        <form method="POST" action="https://request-inspector.glitch.me/">
+            <section>
+                <label for="email">User Email:</label>
+                <input name="email" id="email" placeholder="Input email here" type="text">
+                <label for="password">User Password:</label>
+                <input id="password" name="password" placeholder="Enter password here" type="password">
+            </section>
+            <section>
+                <label for="bio">Tell me about yourself:</label><br>
+                <textarea name="bio" id="bio" cols="30" rows="10" placeholder="Type bio here"></textarea>
+            </section>
+            <section>
+                <p>How did you here about us?</p>
+                <input name="ads" type="checkbox" value="billboard" id="billboard"><label for="billboard">Billboard</label>
+                <input name="ads" type="checkbox" value="radio advertisement" id="radio"><label for="radio">Radio Advertisements</label>
+                <input name="ads" type="checkbox" value="internet advertisement" id="internet"><label for="internet">Internet Advertisements</label>
+                <input name="ads" type="checkbox" value="other" id="other"><label for="other">Other</label>
+            </section>
+            <section>
+                <label for="browser">What browser are you using?</label><br>
+                <select name="browser" id="browser">
+                    <option value="chrome">Google Chrome</option>
+                    <option value="firefox">Mozilla Firefox</option>
+                    <option value="safari">Safari</option>
+                    <option value="edge">Microsoft Edge</option>
+                    <option value="opera">Opera</option>
+                    <option value="netscape">Netscape Navigator</option>
+                </select>
+            </section>
+            <input type="submit">
+        </form>
+    </main>
+</body>
+</html>
