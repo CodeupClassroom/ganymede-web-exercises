@@ -16,17 +16,80 @@
 
     // Write a JavaScript function that takes in a string input and returns true if the input is at least 8 characters in length. It should return false for all other string inputs.
 
-    function isAtLeastEightLong(str) {
-        // if (str.length >= 8) {
-        //     return true;
-        // } else {
-        //     return false
-        // }
-        return str.length >= 8;
+    // function isAtLeastEightLong(str) {
+    //     // if (str.length >= 8) {
+    //     //     return true;
+    //     // } else {
+    //     //     return false
+    //     // }
+    //     return str.length >= 8;
+    // }
+    //
+    // console.log(isAtLeastEightLong("cat")); // false
+    // console.log(isAtLeastEightLong("justinreich")); // true
+
+
+    /*
+
+    Write a function, twoMoreAwayFromZero that takes in a number input and returns a number two more away from zero than the original input. Negative number inputs will be reduced by two and positive numbers and zero will be increased by two.
+
+    Examples:
+
+    twoMoreAwayFromZero(2) will return 4
+    twoMoreAwayFromZero(0) will return 2
+    twoMoreAwayFromZero(0.5) will return 2.5
+    twoMoreAwayFromZero(-2) will return -4
+    twoMoreAwayFromZero(-3.5) will return -5.5
+
+    */
+
+    function twoMoreAwayFromZero(num) {
+        return num + 2;
     }
 
-    console.log(isAtLeastEightLong("cat")); // false
-    console.log(isAtLeastEightLong("justinreich")); // true
+
+
+    console.log(twoMoreAwayFromZero(2)); // 4
+    console.log(twoMoreAwayFromZero(0)); // will return 2
+    console.log(twoMoreAwayFromZero(0.5)); // will return 2.5
+    console.log(twoMoreAwayFromZero(-2)); // will return -4
+    console.log(twoMoreAwayFromZero(-3.5)); // will return -5.5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // function assert(actualOutput, expectedOutput) {
+    //     if (actualOutput === expectedOutput) {
+    //         console.log("%cPASS", "color: limegreen");
+    //     } else {
+    //         console.log("%cFAIL", "color: red", "The value " + actualOutput + " did not match with " + expectedOutput);
+    //     }
+    // }
+    //
+    // assert(twoMoreAwayFromZero(2), 4);
+    // assert(twoMoreAwayFromZero(0), 2);
+    // assert(twoMoreAwayFromZero(0.5), 2.5);
+    // assert(twoMoreAwayFromZero(-2), -4);
+    // assert(twoMoreAwayFromZero(-3.5), -5.5);
+
 
 </script>
 </body>
