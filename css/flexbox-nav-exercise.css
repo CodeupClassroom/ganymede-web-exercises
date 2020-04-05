@@ -1,0 +1,82 @@
+
+/*links turn blue on hover*/
+/*anchor tags are display: inline-block*/
+/*clickable area of links immediately flow from one link to the next (padding will help achieve this)*/
+/*Google Fonts used for logo and link text ("Montserrat" and "Work Sans", respectively)*/
+/*the "Logo" text is 3em with .2em of padding above and below*/
+/* no explicit height given to the navbar*/
+/* default styling is removed as needed from the body, unordered list and anchor tag elements*/
+/*logo is absolutely positioned to completely center text on the navbar*/
+
+
+
+body {
+    margin: 0;
+    font-family: "Work Sans";
+    box-sizing: border-box;
+}
+
+nav {
+    background: lightgray;
+    height: 4.25em;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: inherit;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+
+    /*We can remove this*/
+    /*display: inline-block;*/
+}
+
+nav a:hover {
+    color: blue;
+}
+
+nav li {
+    margin: .5em;
+}
+
+li:nth-child(6) {
+    margin-left: auto;
+}
+
+.logo-item {
+    font-size: 3em;
+    margin: 0;
+    font-family: "Montserrat";
+    position: absolute;
+    height: inherit;
+    width: 100%;
+    display: flex;
+}
+
+.logo-item a{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li:not(.logo-item) {
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
