@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Practice</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-size: 1.5em;
+            font-family: Helvetica;
+            font-weight: lighter;
+            margin: 0;
+        }
+        div.wrapper {
+            display: grid;
+            grid-template:
+                    "nav nav nav"
+                    "sub sub sub"
+                    "aside1 main aside2"
+                    / 1fr 2fr 1fr;
+        }
+        .wrapper > *:not(nav) {
+            /*border: 1px solid lime;*/
+            padding: 1em;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav {
+            background: greenyellow;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            grid-area: nav;
+            z-index: 1;
+        }
+        .sub {
+            grid-area: sub;
+            position: sticky;
+            top: 0;
+            background: mediumpurple;
+            transition: color .2s;
+            z-index: 0;
+        }
+        .sub:hover {
+            color: mediumpurple;
+        }
+        .sub h2 {
+            margin: 0;
+        }
+        nav ul {
+            display: flex;
+            margin: 0;
+        }
+        nav li {
+            padding: 1em;
+        }
+        aside.module-nav {
+            background: aqua;
+            grid-area: aside1;
+        }
+        main {
+            background: lightcoral;
+        }
+        aside.lesson-nav {
+            background: lightsalmon;
+            grid-area: aside2;
+            position: sticky;
+            top: 30px;
+        }
+        .sticky {
+            position: sticky;
+            top: 130px;
+            height: calc(100vh - 150px);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <nav>
+            <ul>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JS</a></li>
+            </ul>
+        </nav>
+        <div class="sub">
+            SUB NAV
+        </div>
+        <aside class="module-nav">
+            <div class="sticky">
+                <h5>CSS</h5>
+                <ul>
+                    <li><a href="#">Positioning</a></li>
+                    <li><a href="#">Flexbox</a></li>
+                    <li><a href="#">Grid</a></li>
+                </ul>
+            </div>
+        </aside>
+        <aside class="lesson-nav">
+            <div class="sticky">
+                <h5>Table of Contents</h5>
+                <ul>
+                    <li><a href="#">One</a></li>
+                    <li><a href="#">Two</a></li>
+                    <li><a href="#">Three</a></li>
+                </ul>
+            </div>
+        </aside>
+        <main>
+            <header>
+                <h1>All About Grid</h1>
+            </header>
+            <section>
+                <h3>A Sub Heading</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet atque consequatur culpa earum, esse facere in magnam non quae quasi quis ratione repellat repellendus saepe sed totam ullam! Accusantium, atque cum deleniti deserunt dolorem esse, hic incidunt ipsum laboriosam nam nostrum nulla odio praesentium tempora, veritatis voluptates voluptatum. A ab ad blanditiis dicta dolores doloribus eaque fuga id iusto nam nihil numquam obcaecati odio, possimus quis ratione voluptatem. Aliquam assumenda cumque dicta illo laborum laudantium, maxime molestiae omnis porro quaerat, quas quidem quos ratione rem unde vitae voluptate voluptatem? Consequatur expedita, harum hic inventore iste nam provident qui rem repellendus?
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consequatur consequuntur delectus, dolorem earum labore magni molestiae praesentium provident quas sed totam? Error maiores nulla quam tempore. Ad adipisci consequatur eligendi enim in maxime nam odio quam quia ratione rem ut, vero voluptatum! Aperiam at autem consequatur corporis cum deleniti dignissimos dolores dolorum eaque eius eligendi eum fugiat harum incidunt laudantium neque nostrum, pariatur porro quam quasi quidem quis recusandae rem rerum soluta tempore voluptatibus?
+                </p>
+            </section>
+            <section>
+                <h3>Another Sub Heading</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, assumenda eos esse excepturi illo ipsam laborum maiores maxime molestias nobis non perferendis porro quae quas rem repellendus, sit veritatis voluptatibus. A, architecto at beatae commodi consequatur corporis cupiditate dolores dolorum ducimus ea eligendi eos eveniet facilis fuga id impedit ipsa ipsum iste magnam maiores, modi nam necessitatibus neque nihil nisi nulla obcaecati optio perspiciatis possimus quae quia quos recusandae repellat, saepe sequi ut voluptate. Aspernatur autem blanditiis labore laborum nam necessitatibus nemo nulla quidem vero voluptate? A eaque et, illo iure perferendis sit vel. Blanditiis facere illo ratione unde! Aliquid aperiam, asperiores dolor doloribus ea enim facere impedit in incidunt iure libero molestiae molestias natus neque obcaecati odit officia omnis pariatur placeat provident quasi quia, quidem reiciendis sequi ut vitae voluptates. Deleniti ea id minima obcaecati odit sit voluptate voluptatibus!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur ducimus eos est explicabo facere, fuga, iste iusto nihil nisi numquam officiis omnis praesentium provident quidem quis sed tenetur unde voluptatem?
+                </p>
+            </section>
+            <section>
+                <h3>Another Sub Heading</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, assumenda eos esse excepturi illo ipsam laborum maiores maxime molestias nobis non perferendis porro quae quas rem repellendus, sit veritatis voluptatibus. A, architecto at beatae commodi consequatur corporis cupiditate dolores dolorum ducimus ea eligendi eos eveniet facilis fuga id impedit ipsa ipsum iste magnam maiores, modi nam necessitatibus neque nihil nisi nulla obcaecati optio perspiciatis possimus quae quia quos recusandae repellat, saepe sequi ut voluptate. Aspernatur autem blanditiis labore laborum nam necessitatibus nemo nulla quidem vero voluptate? A eaque et, illo iure perferendis sit vel. Blanditiis facere illo ratione unde! Aliquid aperiam, asperiores dolor doloribus ea enim facere impedit in incidunt iure libero molestiae molestias natus neque obcaecati odit officia omnis pariatur placeat provident quasi quia, quidem reiciendis sequi ut vitae voluptates. Deleniti ea id minima obcaecati odit sit voluptate voluptatibus!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur ducimus eos est explicabo facere, fuga, iste iusto nihil nisi numquam officiis omnis praesentium provident quidem quis sed tenetur unde voluptatem?
+                </p>
+            </section>
+            <section>
+                <h3>Another Sub Heading</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, assumenda eos esse excepturi illo ipsam laborum maiores maxime molestias nobis non perferendis porro quae quas rem repellendus, sit veritatis voluptatibus. A, architecto at beatae commodi consequatur corporis cupiditate dolores dolorum ducimus ea eligendi eos eveniet facilis fuga id impedit ipsa ipsum iste magnam maiores, modi nam necessitatibus neque nihil nisi nulla obcaecati optio perspiciatis possimus quae quia quos recusandae repellat, saepe sequi ut voluptate. Aspernatur autem blanditiis labore laborum nam necessitatibus nemo nulla quidem vero voluptate? A eaque et, illo iure perferendis sit vel. Blanditiis facere illo ratione unde! Aliquid aperiam, asperiores dolor doloribus ea enim facere impedit in incidunt iure libero molestiae molestias natus neque obcaecati odit officia omnis pariatur placeat provident quasi quia, quidem reiciendis sequi ut vitae voluptates. Deleniti ea id minima obcaecati odit sit voluptate voluptatibus!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur ducimus eos est explicabo facere, fuga, iste iusto nihil nisi numquam officiis omnis praesentium provident quidem quis sed tenetur unde voluptatem?
+                </p>
+            </section>
+            <section>
+                <h3>Another Sub Heading</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, assumenda eos esse excepturi illo ipsam laborum maiores maxime molestias nobis non perferendis porro quae quas rem repellendus, sit veritatis voluptatibus. A, architecto at beatae commodi consequatur corporis cupiditate dolores dolorum ducimus ea eligendi eos eveniet facilis fuga id impedit ipsa ipsum iste magnam maiores, modi nam necessitatibus neque nihil nisi nulla obcaecati optio perspiciatis possimus quae quia quos recusandae repellat, saepe sequi ut voluptate. Aspernatur autem blanditiis labore laborum nam necessitatibus nemo nulla quidem vero voluptate? A eaque et, illo iure perferendis sit vel. Blanditiis facere illo ratione unde! Aliquid aperiam, asperiores dolor doloribus ea enim facere impedit in incidunt iure libero molestiae molestias natus neque obcaecati odit officia omnis pariatur placeat provident quasi quia, quidem reiciendis sequi ut vitae voluptates. Deleniti ea id minima obcaecati odit sit voluptate voluptatibus!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur ducimus eos est explicabo facere, fuga, iste iusto nihil nisi numquam officiis omnis praesentium provident quidem quis sed tenetur unde voluptatem?
+                </p>
+            </section>
+        </main>
+    </div>
+    <script>
+        "use strict";
+        window.addEventListener('scroll', function(e) {
+            if (window.scrollY >= 15) {
+                document.querySelector(".sub").style.color = "mediumpurple";
+            } else {
+                document.querySelector(".sub").style.color = "black";
+            }
+        });
+    </script>
+</body>
+</html>
