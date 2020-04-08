@@ -1,3 +1,5 @@
+/* mobile-first styling */
+
 * {
     box-sizing: border-box;
 }
@@ -5,6 +7,22 @@
 body {
     margin: 0;
     font-family: monospace;
+    font-size: .7em;
+}
+
+/* mobile first grid layout */
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+            "header"
+            "section-1"
+            "section-2"
+            "section-3"
+            "section-4"
+            "footer";
+    grid-row-gap: 2em;
+    grid-column-gap: 3em;
 }
 
 h1,
@@ -22,7 +40,11 @@ h3 {font-size: 2em}
 p, a, button {font-family: "Roboto", serif}
 
 button {
-    font-size: 1.2em;
+    /*
+        I chose to use rem units for button size since both buttons are in a different relative
+        font size between the header and footer with ems. rems keep both buttons the same size.
+    */
+    font-size: .7rem;
     background: black;
     color: white;
     border: none;
@@ -33,18 +55,6 @@ button {
 
 button:hover {
     cursor: pointer;
-}
-
-.wrapper {
-    display: grid;
-    grid-template-columns: 1fr repeat(3, 20%) 1fr;
-    grid-template-areas:
-            ". header header header ."
-            ". section-1 section-2 section-3 ."
-            ". section-4 section-4 section-4 ."
-            ". footer footer footer .";
-    grid-row-gap: 7em;
-    grid-column-gap: 3em;
 }
 
 .logo {
@@ -66,6 +76,15 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-size: .7em;
+}
+
+section:not(:nth-of-type(4)) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1em;
 }
 
 section:nth-of-type(1) {grid-area: section-1}
@@ -80,6 +99,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 3em;
+    padding: 1em;
 }
 
 i {
@@ -98,8 +118,9 @@ a {
     justify-content: space-around;
     align-items: baseline;
     list-style: none;
-    font-size: 2em;
-    letter-spacing: 10px;
+    font-size: 1.3em;
+    letter-spacing: 5px;
+    padding: 0;
 }
 
 .brand-1 {font-family: "Comic Sans MS", serif}
@@ -114,3 +135,59 @@ a {
 }
 
 .footer-links li {padding: 1em}
+
+/* Tablet Changes */
+@media screen and (min-width:576px) {
+    body {
+        font-size: .7em;
+    }
+    header {
+        font-size: 1em;
+    }
+    button {
+        font-size: 1rem;
+    }
+    /* tablet grid layout */
+    .wrapper {
+        grid-row-gap: 5em;
+        grid-template-columns: 10% 1fr 10%;
+        grid-template-areas:
+                ". header ."
+                ". section-1 ."
+                ". section-2 ."
+                ". section-3 ."
+                ". section-4 ."
+                ". footer .";
+    }
+}
+
+/* Desktop changes */
+@media screen and (min-width:992px) {
+    /* full size fonts */
+    body {
+        font-size: 1em;
+    }
+    header {
+        font-size: 1em;
+    }
+    /* remove display flex from sections */
+    section {
+        display: block !important;
+    }
+    /* larger brand font size */
+    .brands {
+        font-size: 1.5em;
+        letter-spacing: 10px;
+    }
+    /* desktop grid layout */
+    .wrapper {
+        grid-template-columns: 1fr repeat(3, 20%) 1fr;
+        grid-template-areas:
+                ". header header header ."
+                ". section-1 section-2 section-3 ."
+                ". section-4 section-4 section-4 ."
+                ". footer footer footer .";
+        grid-row-gap: 7em;
+    }
+}
+
