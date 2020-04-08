@@ -150,7 +150,7 @@ a {
     /* tablet grid layout */
     .wrapper {
         grid-row-gap: 5em;
-        grid-template-columns: 10% 1fr 10%;
+        grid-template-columns: 5% 1fr 5%;
         grid-template-areas:
                 ". header ."
                 ". section-1 ."
