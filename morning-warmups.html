@@ -77,52 +77,45 @@
 
     // Write a JavaScript function that takes in an argument, and will return the boolean true if the argument is an even number, and false for all other arguments.
 
-    function isEvenNum(parameter) {
-        if (parameter % 2 === 0) {
-            return true;
-        } else {
-            return false;
-        }
-        return parameter % 2 === 0;
-    }
-
-    console.log(isEvenNum(4), true);
-    console.log(isEvenNum(77), false);
-    console.log(isEvenNum("Derek"), false);
+    // function isEvenNum(parameter) {
+    //     if (parameter % 2 === 0) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
+    //     return parameter % 2 === 0;
+    // }
+    //
+    // console.log(isEvenNum(4), true);
+    // console.log(isEvenNum(77), false);
+    // console.log(isEvenNum("Derek"), false);
 
 
     // Write a function, returnEvenOddMessage, that takes in a number input and returns the string "is even" if the number input is even and returns the string "is odd" if the number input is odd.
     //
     // HINT: Is there some code you have already written that can be used to solve the problem?
 
-    function returnEvenOddMessage(num) {
-        if (isEvenNum(num)) {
-           return "is even";
-        } else {
-            return "is odd";
-        }
+    // function returnEvenOddMessage(num) {
+    //     if (isEvenNum(num)) {
+    //        return "is even";
+    //     } else {
+    //         return "is odd";
+    //     }
+    // }
+    //
+    // console.log(returnEvenOddMessage(4), "is even");
+    // console.log(returnEvenOddMessage(77), "is odd");
+    // console.log(returnEvenOddMessage(0), "is even");
+
+    // Write a javascript function that returns true or false as to whether or not a number passed into the function is a whole number.
+
+    function isWholeNumber(num) {
+        return num === Math.round(num);
     }
 
-    console.log(returnEvenOddMessage(4), "is even");
-    console.log(returnEvenOddMessage(77), "is odd");
-    console.log(returnEvenOddMessage(0), "is even");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    console.log(isWholeNumber(88));
+    console.log(isWholeNumber(3.14));
+    console.log(isWholeNumber("Derek"));
 
 
     // function assert(actualOutput, expectedOutput) {
