@@ -162,6 +162,7 @@ console.log(favoriteFoods.length);
             break;
         }
     }
+//    test
 // TODO TOGETHER: Alert "that's my favorite shape!" when your favorite shape is iterated over in the loop.
 
 // TODO: What happens if we change var i = 1? or var i = 2;
