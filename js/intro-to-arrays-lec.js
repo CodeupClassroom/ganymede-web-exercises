@@ -219,3 +219,22 @@ console.log(favoriteFoods.length);
     favoriteFoods.forEach(function(food){
         console.log(food);
     });
+
+    // How to pull certain values from an array into a new one
+
+
+var originalArray = [1,2,'dog','cat',3,'mouse','4'];
+
+function separateNumValues(arr){
+    // empty bucket to catch values
+    var numberArray = [];
+    arr.forEach(function(element){
+        if(typeof(element) === "number"){
+            // element will be added to numberArray if type is number
+            numberArray.push(element);
+        }
+    });
+    return numberArray;
+}
+
+console.log(separateNumValues(originalArray));
