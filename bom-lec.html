@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM Lecture</title>
+</head>
+<body>
+    <h1>BOM</h1>
+    <script>
+        (function(){
+            var i = 1;
+            var pillow = "MyPillow";
+            var arr = [1,2,3];
+
+            // console.log(window);
+
+            // alert("Hi, register for my site!");
+            // window.alert("You really should register for my site...");
+
+            // Two parameter for the setInterval method.
+            // - 1: callback function (handler)
+            // - 2: the time. The amount of time (in milliseconds) before the code runs again.
+
+            // How to clear the interval ID?
+            // 1 - Set your setInterval method to a variable. This is because the return of your set interval method is an interval ID.
+            // 2 - Define the stop point. (clearInterval(intervalID))
+
+            function handler() {
+                var yesNo = confirm("Do you like websites chronicling the news surround the murder hornets?");
+                if (yesNo) {
+                    alert("I know you just wanted to stop hearing about the murder hornets. I don't blame you, honestly.");
+                    clearInterval(murderHornetID);
+                }
+            }
+
+            // var murderHornetID = setInterval(handler, 3000);
+            // var gooseID = setInterval(function() {
+            //     if (confirm("Are geese annoying?")) {
+            //         clearInterval(gooseID);
+            //     }
+            // }, 5000);
+            // console.log(murderHornetID);
+            // console.log(gooseID);
+
+            // var registerForMyWebzone = setInterval(function() {
+            //     if(confirm("Hey, register for my website's mailing list?")) {
+            //          var userEmail = prompt("What is your email?");
+            //          clearInterval(registerForMyWebzone);
+            //     }
+            // }, 3000);
+
+            // var x = 1;
+            // var runThreeTimes = setInterval(function() {
+            //     alert("Fun times ahead this year! Be sure to register with our newspaper for more information on GloboCo!");
+            //     if (x === 3) {
+            //         clearInterval(runThreeTimes);
+            //     } else {
+            //         x++;
+            //     }
+            // }, 4500);
+
+
+            // setTimeout
+
+            // Similar to setInterval, but only meant to happen once.
+
+            // setTimeout(function() {
+            //     alert("CONGRATULATIONS! YOU WON!");
+            // }, 9000);
+
+            function alertAdBlock() {
+                alert("Hey, stop using AdBlocker!");
+            }
+
+            // setTimeout(alertAdBlock, 4500);
+
+            // window.location = "http://neopets.com";
+
+            if(confirm("Did you make a boo-boo?")) {
+                location.reload();
+            }
+
+        })();
+    </script>
+</body>
+</html>
