@@ -204,7 +204,21 @@
     // console.log(checkForLengthInArr([{'a': 'hello'}, 10, true])); // false
     // console.log(checkForLengthInArr([5, {'a': 'hello'}, 30, true, null])); // true
 
+    // Write a javascript function that takes in a number and returns the number raised to the power of four. If any argument is passed into the function that is not a number, return false.
 
+    function raisedByPowerOfFour(num) {
+        if (!isNaN(num) && typeof num === "number") {
+            return num ** 4;
+            // return Math.pow(num,4);
+        } else {
+            return false;
+        }
+    }
+
+    // console.log(raisedByPowerOfFour(4));
+    // console.log(raisedByPowerOfFour("Geoff"));
+    // console.log(raisedByPowerOfFour(true));
+    // console.log(raisedByPowerOfFour(NaN));
 
 
 </script>
