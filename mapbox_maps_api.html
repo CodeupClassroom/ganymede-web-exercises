@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mapbox Map Exercise</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+        }
+        #map {
+            width: 1100px;
+            height: 600px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id='map'></div>
+    <script src="js/keys.js"></script>
+    <script src="js/mapbox-geocode-utils.js"></script>
+    <script>
+
+        var restaurants = [
+            {
+                name: 'Silo',
+                address: 'Silo: Elevated Cuisine, San Antonio, TX',
+                message: 'It\'s great!'
+            },
+            {
+                name: 'Chama Gaucha Steakhouse',
+                address: 'Chama Gaucha Steakhouse, San Antonio, TX',
+                message: 'Too good!'
+            },
+            {
+                name: 'Tarka Indian Kitchen',
+                address: 'Tarka Indian Kitchen, San Antonio, TX',
+                message: 'Awesome!'
+            }
+        ];
+
+        mapboxgl.accessToken = mapboxKey;
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            center: [-98.4996, 29.6052],
+            zoom: 14
+        });
+
+        // Generate a map that shows the city with your favorite restaurant using geocoding.
+            // var favRestAddress = "Chama Gaucha Steakhouse, San Antonio, TX";
+            //
+            //
+            // geocode(favRestAddress, mapboxKey).then(function(results) {
+            //     var marker = new mapboxgl.Marker()
+            //         .setLngLat(results)
+            //         .addTo(map);
+            //     var popup = new mapboxgl.Popup()
+            //         .setHTML('<h3>Chama Gaucha</h3>');
+            //     marker.setPopup(popup);
+            //     map.setZoom(10);
+            //     map.setCenter(results);
+            // });
+
+
+        // Refactor your code to display at least three of your favorite restaurants with information about each.
+        // Create an array of objects with information about each restaurant to accomplish this.
+        // Use a .forEach() loop rather than a for loop.
+
+        // 1. log the name of each restaurant
+        // 2. using geocoding, log the coordinates of each restaurant
+        // 3. add markers for each coordinate
+        // 4. add popups to each marker with HTML containing the restaurant name and message
+
+        restaurants.forEach(function(restaurant) {
+            geocode(restaurant.address, mapboxKey).then(function(coords) {
+
+                // create marker using coords
+                var popup = new mapboxgl.Popup()
+                    .setHTML('<h3>' + restaurant.name + '</h3>' + '<p>' + restaurant.message + '</p>');
+
+                var marker = new mapboxgl.Marker()
+                    .setLngLat(coords)
+                    .addTo(map)
+                    .setPopup(popup);
+
+            });
+        });
+
+    </script>
+</body>
+</html>
