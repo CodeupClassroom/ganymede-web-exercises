@@ -220,6 +220,20 @@
     // console.log(raisedByPowerOfFour(true));
     // console.log(raisedByPowerOfFour(NaN));
 
+    // Write a JavaScript function that takes in a string and returns the number of words in the string (Numbers within a string should be counted as a word). If the function is ever passed an argument that is not a string, return the number 0.
+
+    function numOfWords(str) {
+        if (typeof str === "string") {
+            return str.split(" ").length;
+        } else {
+            return 0;
+        }
+    }
+
+    // console.log(numOfWords("This is 4 words."));
+    // console.log(numOfWords(99));
+    // console.log(numOfWords("Cats are cool and so are you. I have " + 99 + " cats!"));
+
 
 </script>
 </body>

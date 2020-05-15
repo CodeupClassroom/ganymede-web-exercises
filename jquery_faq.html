@@ -24,7 +24,7 @@
         dd {
             margin-bottom: 1.2em;
         }
-        #styler {
+        .styler {
             position: relative;
             top: 0;
             left: 0;
@@ -36,7 +36,7 @@
             padding: 10px;
             box-shadow: 5px 5px 10px black;
         }
-        #styler:hover {
+        .styler:hover {
             background-color: brown;
             color: blanchedalmond;
             border-color: orangered;
@@ -44,21 +44,9 @@
             top: 5px;
             left: 5px;
         }
-        h2 {
-            display: none;
-        }
-        ul {
-            display: none;
-        }
     </style>
 </head>
 <body>
-<div>
-    <h1>Would you like to sign up for our newsletter?</h1>
-    <span id="hide-newsletter">&#x274C;</span>
-</div>
-
-<h2>Would you like to register for this site?</h2>
 <dl>
     <dt>Lorem Park</dt>
     <dd>Something something, blah blah.</dd>
@@ -91,44 +79,60 @@
     <dd>Yogi lives there.</dd>
 </dl>
 
-<button id="styler">Click to change some things!</button>
+<button class="styler" id="btn-1">Click to change some things!</button>
 <hr>
 
-<h3>Guadalupe River State Park</h3>
+<h3>Snæfellsjökull</h3>
 <ul>
-    <li>Golden-cheeked warbler lives there.</li>
-    <li>Much River.</li>
-    <li>Very Wet.</li>
-    <li>Opened to the public in 1983.</li>
-</ul>
-<h3>McKinney Falls State Park</h3>
-<ul>
-    <li>Guadalupe spiny softshell turtle lives there.</li>
-    <li>Many Falls.</li>
-    <li>Very Wet.</li>
-    <li>In Austin before Austin was established.</li>
-</ul>
-<h3>Pedernales Falls State Park</h3>
-<ul>
-    <li>Has Animals???</li>
-    <li>Many Falls.</li>
-    <li>Not Very Wet (Sometimes).</li>
-    <li>I was dragged here by my Mom one time.</li>
+    <li>Stratovolcano</li>
+    <li>Sometimes it may be seen from the city of Reykjavík over Faxa Bay, at a distance of 120 km.</li>
+    <li>The mountain is one of the most famous sites of Iceland, primarily due to the novel Journey to the Center of the Earth (1864) by Jules Verne, in which the protagonists find the entrance to a passage leading to the center of the earth on Snæfellsjökull.</li>
+    <li>In August 2012 the summit was ice-free for the first time in recorded history.</li>
 </ul>
 
-<button id="styler-2">Click me to highlight last list item</button>
+<h3>Vatnajökull</h3>
+<ul>
+    <li>Vatnajökull National Park is divided into four territories.</li>
+    <li>Vatnajökull is Europe's largest glacier outside the arctic, with a surface area of 8,100 km2.</li>
+    <li>It encompasses all of Vatnajökull glacier and extensive surrounding areas. These include the national parks previously existing at Skaftafell in the southwest and Jökulsárgljúfur in the north.</li>
+    <li>On 5 July 2019, Vatnajökull National Park was inscribed as a World Heritage Site.</li>
+</ul>
+
+<h3>Þingvellir</h3>
+<ul>
+    <li>The National Gallery of Iceland owns more than 150 paintings by Ásgrímur Jónsson that have Þingvellir as their subject.</li>
+    <li>The name Þingvellir is derived from the Old Norse Þingvǫllr, from þing (“thing, assembly”) and vǫllr (“field”), meaning assembly fields.</li>
+    <li>Þingvellir is associated with the Althing, the national parliament of Iceland, which was established at the site in 930 AD.</li>
+    <li>Þingvellir was designated as a World Heritage Site in 2004.</li>
+</ul>
+
+<button class="styler" id="btn-2">Click me to highlight last list item</button>
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
     $(document).ready(function() {
         // $('dd').addClass('invisible');
 
-        $('#styler').click(function(){
+        $('#btn-1').click(function(){
             $('dd').toggleClass('invisible');
         });
 
         $('dt').click(function(){
             $(this).toggleClass('highlighter');
+        });
+
+        $("#btn-2").click(function() {
+            $("ul").each(function() {
+                $(this).children().last().css("background", "yellow");
+            });
+        });
+
+        $("h3").click(function() {
+            $(this).next().children().css("font-weight", "bold");
+        });
+
+        $("li").click(function() {
+            $(this).parent().children().first().css("color", "blue");
         });
     });
 
