@@ -19,14 +19,13 @@ getLastCommitDate('sophiakurihara').then(date => {
 });
 
 function wait(seconds){
-    seconds = seconds * 1000;
     return new Promise(resolve => {
        setTimeout(resolve,seconds)
     });
 }
-wait(1).then(() => console.log("You'll see this after 1 second"));
-wait(2).then(() => console.log("You'll see this after 2 seconds"));
-wait(3).then(() => console.log("You'll see this after 3 seconds"));
+wait(1000).then(() => console.log("You'll see this after 1 second"));
+wait(2000).then(() => console.log("You'll see this after 2 seconds"));
+wait(3000).then(() => console.log("You'll see this after 3 seconds"));
 
 
 function waitVersionTwo(seconds){
