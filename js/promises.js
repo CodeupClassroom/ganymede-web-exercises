@@ -21,15 +21,25 @@ getLastCommitDate('sophiakurihara').then(date => {
 function wait(seconds){
     seconds = seconds * 1000;
     return new Promise(resolve => {
-       setTimeout(() => {
-           if(seconds > 1000){
-               console.log("You'll see this after " + seconds/1000 + " seconds");
-           }else{
-               console.log("You'll see this after " + seconds/1000 + " second");
-           }
-       },seconds)
+       setTimeout(resolve,seconds)
     });
 }
-wait(1);
-wait(2);
-wait(3);
+wait(1).then(() => console.log("You'll see this after 1 second"));
+wait(2).then(() => console.log("You'll see this after 2 seconds"));
+wait(3).then(() => console.log("You'll see this after 3 seconds"));
+
+
+function waitVersionTwo(seconds){
+    seconds = seconds * 1000;
+    return new Promise(resolve => {
+        setTimeout(() => {
+            if(seconds > 1000){
+                console.log("You'll see this after " + seconds/1000 + " seconds.")
+            }else{
+                console.log("You'll see this after " + seconds/1000 + " second.")
+            }
+        },seconds)
+    });
+}
+waitVersionTwo(1);
+waitVersionTwo(5);
